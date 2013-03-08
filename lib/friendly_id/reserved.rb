@@ -56,7 +56,7 @@ For example:
       def base=(base)
         super
         reserved_words = model_class.friendly_id_config.reserved_words
-        model_class.validates_exclusion_of :friendly_id, :in => reserved_words
+        model_class.validates :exclusion => {:friendly_id, :in => reserved_words}
       end
 
       # An array of words forbidden as slugs.
